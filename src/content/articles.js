@@ -6,75 +6,65 @@ export const articles = {
       tags: [],
       excerpt: "Comment j'ai embracé l'IA pour créer ce blog et pourquoi c'est une approche dont il faut être fier.",
       content: `
-## L'Art du Prompt Engineering
+Salut à tous ! Aujourd'hui, je vous parle de mon dernier projet : ce blog. Oui, celui que vous êtes en train de lire. Et devinez quoi ? Il a été créé avec l'aide de l'IA. Mais attention, pas question de laisser l'IA faire tout le travail pendant que je sirote un mojito sur la plage. Non, j'ai utilisé l'IA comme un partenaire de coding, et je vais vous expliquer pourquoi c'est une approche dont je suis fier (et pourquoi vous devriez l'être aussi si vous faites pareil).
 
-En tant qu'étudiant en L3 au CNAM, j'ai décidé d'explorer l'IA d'une manière différente. Ce n'est pas juste utiliser l'IA, c'est comprendre comment communiquer avec elle efficacement. Le prompt engineering, c'est comme parler une nouvelle langue - il faut être précis, structuré et stratégique.
+## L'Art du Prompt Engineering (ou comment parler à une IA sans la vexer)
 
-## Une Approche Méthodique
+En tant qu'étudiant en L3 au CNAM, j'ai décidé de ne pas juste utiliser l'IA comme un outil magique, mais de vraiment comprendre comment lui parler. Parce que oui, l'IA, c'est un peu comme un collègue de travail : si vous lui demandez n'importe quoi, elle va vous répondre n'importe comment.
 
-Quand j'utilise l'IA, ce n'est pas du hasard. Chaque prompt est soigneusement réfléchi. Je décompose mes requêtes en étapes logiques, comme un algorithme. Par exemple, pour ce blog, j'ai commencé par :
+Le prompt engineering, c'est l'art de poser les bonnes questions. Et croyez-moi, c'est plus subtil qu'il n'y paraît. C'est comme essayer d'expliquer à votre grand-mère comment installer une app sur son téléphone. Il faut être clair, précis, et surtout... patient.
 
-1. Définir clairement l'architecture souhaitée
-2. Poser des questions spécifiques sur chaque composant
-3. Vérifier et itérer sur les réponses
+## Ma Méthode : Structurée mais pas Chiante
 
-Cette approche méthodique permet d'obtenir exactement ce que je veux, pas ce que l'IA pense que je veux.
+Quand je bosse avec l'IA, je ne lance pas des prompts au hasard en espérant que ça marche. Non, je découpe tout en étapes, comme si je préparais un gâteau (sauf que là, le gâteau, c'est du code). Par exemple, pour ce blog, voici comment je m'y suis pris :
 
-## Sécurité et Confidentialité Avant Tout
+Définir l'architecture : J'ai commencé par expliquer à l'IA ce que je voulais comme structure. Un peu comme si je lui disais : "OK, on va faire un gâteau à étages, mais sans cerises, parce que les cerises, c'est overrated."
 
-Un aspect crucial de mon utilisation de l'IA est la sécurité. Je ne partage jamais :
-- De données personnelles
-- D'informations sensibles
-- De détails de sécurité
+Poser des questions précises : Au lieu de demander "Comment je fais un blog ?", j'ai demandé des trucs du genre : "Comment je peux implémenter un système de thème sombre avec React et Tailwind ?"
 
-Je structure mes prompts pour obtenir des réponses techniques sans avoir à exposer des informations confidentielles. C'est comme poser une question sans révéler le contexte sensible.
+Itérer intelligemment : Si la réponse de l'IA était un peu à côté de la plaque, je reformulais ma question. Parfois, c'est un peu comme jouer à "Devine ce que je pense".
 
-## Ma Méthode de Prompt
+## Sécurité : Parce que Personne ne Veut se Faire Pirater
 
-Voici comment je construis mes prompts :
+Un point super important pour moi, c'est la sécurité. Je ne partage jamais :
 
-1. **Contexte Clair mais Sécurisé**
-   "Je travaille sur une fonction d'authentification" plutôt que "Voici mon système de login"
+Mes données perso (l'IA n'a pas besoin de savoir que j'ai mangé trois pizzas cette semaine).
 
-2. **Questions Précises**
-   "Comment implémenter une validation de formulaire avec React Hook Form ?" plutôt que "Comment faire un formulaire ?"
+Des infos sensibles (genre mes mots de passe ou les détails de mes projets pro).
 
-3. **Itérations Intelligentes**
-   Je raffine mes questions basées sur les réponses précédentes
+Des trucs confidentiels (l'IA est sympa, mais elle n'est pas dans mon cercle de confiance).
 
-## Résultats Concrets
+Du coup, je structure mes prompts pour obtenir des réponses techniques sans rien dévoiler de compromettant. C'est un peu comme demander à un ami de vous aider à réparer votre vélo sans lui montrer votre collection de chaussettes trouées.
 
-Cette approche m'a permis de :
-- Construire ce blog en gardant le contrôle total sur le code
-- Apprendre les meilleures pratiques de développement
-- Maintenir la sécurité de mes données
+## Les Coulisses du Développement : Entre Bugs et Moments "Eurêka"
 
-## Les Coulisses du Développement
-
-Le développement de ce blog a été une aventure pleine de rebondissements. Je me souviens particulièrement d'un moment où, après avoir passé des heures à essayer d'implémenter une animation de glitch sur le texte, j'ai réalisé que je pouvais simplement demander à l'IA de m'aider avec Framer Motion. En quelques minutes, nous avions non seulement résolu le problème, mais aussi créé un effet encore plus cool que celui que j'imaginais.
+Le développement de ce blog a été une aventure pleine de surprises. Par exemple, il y a eu ce moment où j'ai passé des heures à essayer de créer une animation de texte "glitch" (vous savez, ce style cyberpunk avec des lettres qui scintillent). Au bout d'un moment, j'ai craqué et j'ai demandé à l'IA de m'aider avec Framer Motion. Résultat : en quelques minutes, on a créé un effet encore plus stylé que ce que j'avais en tête. Merci l'IA !
 
 ### Le Bug qui est Devenu une Feature
 
-Une anecdote amusante : au début, il y avait un "bug" où le thème sombre créait des effets de néon inattendus sur certains éléments. Au lieu de le corriger, j'ai réalisé que ça donnait un style cyberpunk vraiment cool au site. J'ai donc transformé ce bug en feature en l'améliorant et en l'intégrant intentionnellement dans le design.
+Petite anecdote rigolote : au début, il y avait un "bug" où le thème sombre créait des effets de néon un peu bizarres sur certains éléments. Au lieu de le corriger, je me suis dit : "Hey, ça donne un style cyberpunk trop cool !" Du coup, j'ai gardé le bug et je l'ai amélioré pour en faire une feature. Parce que parfois, les meilleures idées viennent des accidents.
 
-### L'Evolution du Design
+### L'Évolution du Design
 
-Le design actuel du blog est en fait la troisième itération. La première version était beaucoup plus classique, presque ennuyeuse. La deuxième était trop chargée en effets visuels. C'est en discutant avec l'IA de l'importance de l'ergonomie que j'ai trouvé le bon équilibre - un design moderne qui reste lisible et agréable à utiliser.
+Le design actuel du blog est en fait la troisième version. La première était un peu trop classique (genre "blog de tonton Michel qui parle de ses tomates"). La deuxième était trop chargée en effets visuels (on aurait dit un site des années 2000). C'est en discutant avec l'IA que j'ai trouvé le bon équilibre : un design moderne, mais lisible et agréable à utiliser.
 
-### Les Projets à Venir
+### Les Projets à Venir : Parce que ce Blog n'est que le Début
 
-Ce blog n'est que le début. J'ai déjà prévu plusieurs améliorations :
-- Un système de commentaires sécurisé
-- Une section portfolio interactive
-- Un dashboard pour suivre mes projets en cours
+Ce blog, c'est juste le début. J'ai déjà plein d'idées pour l'améliorer :
 
-## Au-delà du Simple Outil
+Un système de commentaires sécurisé (parce que les trolls, c'est non).
 
-L'IA n'est pas une baguette magique - c'est un outil puissant qui demande de la réflexion et de la méthode. En comprenant comment formuler mes prompts et en restant vigilant sur la sécurité, j'ai transformé l'IA en un véritable partenaire de développement. Ensemble, nous avons créé quelque chose dont je suis vraiment fier.
+Une section portfolio interactive (pour montrer mes projets en détail).
+
+Un dashboard pour suivre mes projets en cours (parce que j'aime bien tout organiser).
+
+## L'IA : Un Outil, pas une Baguette Magique
+
+L'IA, c'est un outil incroyable, mais ce n'est pas une baguette magique. Pour en tirer le meilleur, il faut réfléchir, poser les bonnes questions et rester vigilant sur la sécurité. En comprenant comment formuler mes prompts, j'ai transformé l'IA en un vrai partenaire de développement. Et ensemble, on a créé quelque chose dont je suis vraiment fier.
 
 ## Conclusion
 
-Ma fierté ne vient pas du simple fait d'utiliser l'IA, mais de la maîtrise que j'ai développée dans son utilisation. C'est cette capacité à communiquer efficacement avec l'IA tout en protégeant mes données qui fait la différence. En tant qu'étudiant en informatique, je ne me contente pas d'utiliser l'IA - je l'utilise intelligemment.`,
+Au final, ce qui me rend fier, ce n'est pas juste d'avoir utilisé l'IA, mais d'avoir appris à la maîtriser. C'est cette capacité à communiquer efficacement avec elle tout en protégeant mes données qui fait la différence. En tant qu'étudiant en informatique, je ne me contente pas d'utiliser l'IA - je l'utilise intelligemment. Et ça, c'est une compétence qui vaut de l'or.`,
     },
     en: {
       title: "Blog Creation with AI: Why Be Proud?",
@@ -82,75 +72,65 @@ Ma fierté ne vient pas du simple fait d'utiliser l'IA, mais de la maîtrise que
       tags: [],
       excerpt: "How I embraced AI to create this blog and why it's an approach to be proud of.",
       content: `
-## The Art of Prompt Engineering
+Hey everyone! Today, I want to talk about my latest project: this blog. Yes, the one you're reading right now. And guess what? It was created with the help of AI. But hold on, I didn't just let AI do all the work while I was sipping mojitos on the beach. No, I used AI as a coding partner, and I'm going to explain why I'm proud of this approach (and why you should be too if you do the same).
 
-As a Computer Science student at CNAM, I decided to explore AI differently. It's not just about using AI, it's about understanding how to communicate with it effectively. Prompt engineering is like speaking a new language - you need to be precise, structured, and strategic.
+## The Art of Prompt Engineering (or how to talk to AI without offending it)
 
-## A Methodical Approach
+As a student at CNAM, I decided not to just use AI as a magic tool, but to really understand how to talk to it. Because yes, AI is a bit like a coworker: if you ask it nonsense, it will give you nonsense back.
 
-When I use AI, it's not random. Each prompt is carefully thought out. I break down my requests into logical steps, like an algorithm. For example, for this blog, I started by:
+Prompt engineering is the art of asking the right questions. And believe me, it's more subtle than it seems. It's like trying to explain to your grandmother how to install an app on her phone. You need to be clear, precise, and most importantly... patient.
 
-1. Clearly defining the desired architecture
-2. Asking specific questions about each component
-3. Verifying and iterating on responses
+## My Method: Structured but not Boring
 
-This methodical approach allows me to get exactly what I want, not what AI thinks I want.
+When I work with AI, I don't just throw random prompts hoping they'll work. No, I break everything down into steps, like I'm preparing a cake (except here, the cake is code). For example, for this blog, here's how I did it:
 
-## Security and Confidentiality First
+Defining the architecture: I started by explaining to AI what structure I wanted. Kind of like saying: "OK, we're going to make a layered cake, but without cherries, because cherries are overrated."
 
-A crucial aspect of my AI usage is security. I never share:
-- Personal data
-- Sensitive information
-- Security details
+Asking precise questions: Instead of asking "How do I make a blog?", I asked things like: "How can I implement a dark theme system with React and Tailwind?"
 
-I structure my prompts to get technical answers without exposing confidential information. It's like asking a question without revealing sensitive context.
+Iterating intelligently: If AI's response was a bit off, I would rephrase my question. Sometimes it's like playing "Guess what I'm thinking."
 
-## My Prompt Method
+## Security: Because Nobody Wants to Get Hacked
 
-Here's how I construct my prompts:
+A super important point for me is security. I never share:
 
-1. **Clear but Secure Context**
-   "I'm working on an authentication function" rather than "Here's my login system"
+My personal data (AI doesn't need to know I ate three pizzas this week).
 
-2. **Precise Questions**
-   "How to implement form validation with React Hook Form?" rather than "How to make a form?"
+Sensitive information (like my passwords or details about my professional projects).
 
-3. **Intelligent Iterations**
-   I refine my questions based on previous answers
+Confidential stuff (AI is nice, but it's not in my inner circle).
 
-## Concrete Results
+So, I structure my prompts to get technical answers without revealing anything compromising. It's like asking a friend to help you fix your bike without showing them your collection of holey socks.
 
-This approach has allowed me to:
-- Build this blog while maintaining total control over the code
-- Learn development best practices
-- Maintain data security
+## Behind the Scenes: Between Bugs and "Eureka" Moments
 
-## Behind the Scenes
-
-Developing this blog has been quite an adventure. I particularly remember one moment when, after spending hours trying to implement a glitch animation on the text, I realized I could simply ask AI for help with Framer Motion. In just a few minutes, we had not only solved the problem but created an even cooler effect than I had imagined.
+Developing this blog has been quite an adventure full of surprises. For example, there was this time when I spent hours trying to create a "glitch" text animation (you know, that cyberpunk style with flickering letters). Eventually, I gave up and asked AI for help with Framer Motion. Result: in just a few minutes, we created an effect even cooler than what I had in mind. Thanks, AI!
 
 ### The Bug that Became a Feature
 
-An amusing anecdote: initially, there was a "bug" where the dark theme created unexpected neon effects on certain elements. Instead of fixing it, I realized it gave the site a really cool cyberpunk style. So I turned this bug into a feature by enhancing it and intentionally integrating it into the design.
+Funny story: at first, there was this "bug" where the dark theme created some weird neon effects on certain elements. Instead of fixing it, I thought: "Hey, this gives it a really cool cyberpunk style!" So I kept the bug and improved it to make it a feature. Because sometimes, the best ideas come from accidents.
 
 ### The Evolution of Design
 
-The current design of the blog is actually the third iteration. The first version was much more classical, almost boring. The second was too heavy on visual effects. It was through discussing the importance of ergonomics with AI that I found the right balance - a modern design that remains readable and pleasant to use.
+The current blog design is actually the third version. The first one was a bit too classic (like "Uncle Bob's blog about his tomatoes"). The second was too heavy on visual effects (looked like a website from the 2000s). It was through discussing with AI that I found the right balance: a modern design that's still readable and pleasant to use.
 
-### Future Projects
+### Future Projects: Because this Blog is Just the Beginning
 
-This blog is just the beginning. I've already planned several improvements:
-- A secure comment system
-- An interactive portfolio section
-- A dashboard to track my ongoing projects
+This blog is just the start. I already have lots of ideas to improve it:
 
-## Beyond Just a Tool
+A secure comment system (because trolls are a no-go).
 
-AI isn't a magic wand - it's a powerful tool that requires thought and method. By understanding how to formulate my prompts and staying vigilant about security, I've transformed AI into a true development partner. Together, we've created something I'm really proud of.
+An interactive portfolio section (to showcase my projects in detail).
+
+A dashboard to track my ongoing projects (because I like to keep everything organized).
+
+## AI: A Tool, not a Magic Wand
+
+AI is an incredible tool, but it's not a magic wand. To get the best out of it, you need to think, ask the right questions, and stay vigilant about security. By understanding how to formulate my prompts, I've transformed AI into a real development partner. And together, we've created something I'm really proud of.
 
 ## Conclusion
 
-My pride doesn't come from simply using AI, but from the mastery I've developed in using it. It's this ability to communicate effectively with AI while protecting my data that makes the difference. As a computer science student, I don't just use AI - I use it intelligently.`
+In the end, what makes me proud isn't just using AI, but learning to master it. It's this ability to communicate effectively with it while protecting my data that makes the difference. As a computer science student, I don't just use AI - I use it intelligently. And that's a skill that's worth its weight in gold.`
     }
   }
 };
