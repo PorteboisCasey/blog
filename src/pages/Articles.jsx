@@ -12,8 +12,10 @@ const Articles = () => {
   }));
 
   return (
-    <div className="min-h-screen bg-white dark:bg-club-black pt-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white dark:bg-club-black">
+      <div className="pt-32 pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative">
+          <h1 className="font-display text-4xl md:text-5xl text-club-black dark:text-club-text mb-12">Articles</h1>
         {articleList.map((article) => (
           <motion.div
             key={article.id}
@@ -43,6 +45,7 @@ const Articles = () => {
             </article>
           </motion.div>
         ))}
+        </div>
       </div>
     </div>
   );

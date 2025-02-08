@@ -45,12 +45,12 @@ const Home = () => {
 
             <p className="text-lg text-club-smoke dark:text-club-text/70 max-w-2xl leading-relaxed font-light mb-6">
               {language === 'fr' ? 
-                "Explorer le développement à travers mes expériences d'étudiant et mes projets." :
-                "Exploring development through my student experiences and projects."}
+                "Explorer la technologie à travers mes expériences d'étudiant et mes projets personnel." :
+                "Exploring development through my student experiences and personal projects."}
             </p>
 
             <p className="text-sm font-mono text-club-smoke/60 dark:text-club-text/40 tracking-wider">
-              {language === 'fr' ? 'EXPLORER LE DÉVELOPPEMENT' : 'EXPLORING DEVELOPMENT'}
+              {language === 'fr' ? 'EXPLORER LA TECHNOLOGIE' : 'EXPLORING TECHNOLOGY'}
             </p>
           </motion.div>
 

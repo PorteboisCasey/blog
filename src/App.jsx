@@ -37,9 +37,9 @@ function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-      <div className="min-h-screen transition-colors duration-300 bg-white dark:bg-club-black text-club-black dark:text-club-text flex flex-col">
+      <div className="min-h-screen transition-colors duration-300 bg-white dark:bg-club-black text-club-black dark:text-club-text flex flex-col relative">
       <Navbar />
-      <main className="pt-14 relative overflow-hidden">
+      <main className="pt-20 flex-grow relative overflow-hidden">
         <AnimatePresence mode='wait'>
           <motion.div
             key={location.pathname}
