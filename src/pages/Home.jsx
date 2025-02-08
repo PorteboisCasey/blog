@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage } from '../context/LanguageContext';
 import { articles } from '../content/articles';
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t, language } = useLanguage();
   const navigate = useNavigate();
   const [text, setText] = useState('');
-  const fullText = '> EXPLORING THE DIGITAL UNDERGROUND_';
-  const article = articles['blog-creation'];
+  const fullText = language === 'fr' ? '> EXPLORATION DU DIGITAL UNDERGROUND_' : '> EXPLORING THE DIGITAL UNDERGROUND_';
+  const article = articles['blog-creation'][language];
+
+
   
   useEffect(() => {
     let index = 0;
@@ -37,16 +39,18 @@ const Home = () => {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-display mb-4 text-club-black dark:text-club-text leading-none">
-              {t('home.title')} 
-              <span className="text-club-neon">{t('home.subtitle')}</span>
+              STUDENT 
+              <span className="text-club-neon">LAB</span>
             </h1>
 
             <p className="text-lg text-club-smoke dark:text-club-text/70 max-w-2xl leading-relaxed font-light mb-6">
-              {t('home.description')}
+              {language === 'fr' ? 
+                "Explorer le développement à travers mes expériences d'étudiant et mes projets." :
+                "Exploring development through my student experiences and projects."}
             </p>
 
             <p className="text-sm font-mono text-club-smoke/60 dark:text-club-text/40 tracking-wider">
-              {t('home.tagline')}
+              {language === 'fr' ? 'EXPLORER LE DÉVELOPPEMENT' : 'EXPLORING DEVELOPMENT'}
             </p>
           </motion.div>
 
@@ -82,7 +86,7 @@ const Home = () => {
                       {article.excerpt}
                     </p>
                     <div className="flex items-center text-club-smoke dark:text-club-text/60 hover:text-club-neon transition-colors duration-300 mt-6">
-                      <span className="text-xs font-mono mr-2">{t('home.readMore')}</span>
+                      <span className="text-xs font-mono mr-2">{language === 'fr' ? 'Lire la suite' : 'Read more'}</span>
                       <ArrowRight size={14} />
                     </div>
                   </article>

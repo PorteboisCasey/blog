@@ -11,9 +11,7 @@ import Home from './pages/Home';
 import Articles from './pages/Articles';
 import ArticlePage from './pages/ArticlePage';
 import About from './pages/About';
-import BlogCreationArticle from './pages/BlogCreationArticle';
-import NewArticle from './pages/NewArticle';
-import EditArticle from './pages/EditArticle';
+
 
 const pageTransitionVariants = {
   initial: { 
@@ -71,12 +69,8 @@ function App() {
             <Routes location={location}>
               <Route path="/" element={<Home />} />
               <Route path="/articles" element={<Articles />} />
-              <Route path="/articles/new" element={<NewArticle />} />
               <Route path="/articles/:id" element={<ArticlePage />} />
-              <Route path="/articles/:id/edit" element={<EditArticle />} />
               <Route path="/about" element={<About />} />
-              <Route path="/articles/blog-creation" element={<BlogCreationArticle />} />
-              <Route path="/tags/:tag" element={<Articles />} />
             </Routes>
           </motion.div>
         </AnimatePresence>

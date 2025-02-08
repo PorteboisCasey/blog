@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { articles } from '../content/articles';
+import { useLanguage } from '../context/LanguageContext';
 
 const Articles = () => {
   const navigate = useNavigate();
-  const articleList = Object.entries(articles).map(([slug, article]) => ({
-    ...article,
-    slug
+  const { language } = useLanguage();
+  const articleList = Object.entries(articles).map(([id, article]) => ({
+    ...article[language],
+    id
   }));
 
   return (
@@ -14,12 +16,12 @@ const Articles = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {articleList.map((article) => (
           <motion.div
-            key={article.slug}
+            key={article.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="cursor-pointer mb-8"
-            onClick={() => navigate(`/articles/${article.slug}`)}
+            onClick={() => navigate(`/articles/${article.id}`)}
           >
             <article className="border border-club-concrete dark:border-club-dark p-8 rounded-lg hover:border-club-neon transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex justify-between items-center mb-6">
