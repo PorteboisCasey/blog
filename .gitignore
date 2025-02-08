@@ -1,10 +1,51 @@
-# Créez un fichier .gitignore
-echo "node_modules
+# Dependencies
+node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production
+/build
+/dist
+
+# Environment files
 .env
-.DS_Store
-dist
-.cache
-logs
-*.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
 .vscode
-.idea" > .gitignore
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Cache and temp files
+.cache
+.temp
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache

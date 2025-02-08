@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { cardVariants } from '../lib/animations';
 
-const ArticleCard = ({ title, excerpt, date, tags }) => (
+const ArticleCard = ({ id, title, content, created_at, author_id }) => (
   <motion.article
     variants={cardVariants}
     whileHover="hover"
@@ -11,31 +11,26 @@ const ArticleCard = ({ title, excerpt, date, tags }) => (
     <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity" />
     
     <span className="text-xs font-semibold text-primary dark:text-primary-300">
-      {new Date(date).toLocaleDateString('fr-FR', {
+      {new Date(created_at).toLocaleDateString('fr-FR', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
       })}
     </span>
     
-    <Link to="/article/1" className="block mt-2">
+    <Link to={`/articles/${id}`} className="block mt-2">
       <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 hover:text-primary transition-colors">
         {title}
       </h2>
       <p className="mt-3 text-gray-600 dark:text-gray-300">
-        {excerpt}
+        {content.length > 150 ? content.substring(0, 150) + '...' : content}
       </p>
     </Link>
     
     <div className="mt-4 flex flex-wrap gap-2">
-      {tags.map(tag => (
-        <span 
-          key={tag}
-          className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full"
-        >
-          #{tag}
-        </span>
-      ))}
+      <span className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
+        Author #{author_id}
+      </span>
     </div>
   </motion.article>
 );

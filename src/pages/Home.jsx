@@ -1,119 +1,92 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Code2, Rocket, Brain } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from '../hooks/useTranslation';
+import { blogCreationArticle } from '../content/articles/blog-creation';
+import { useLanguage } from '../context/LanguageContext';
 
 const Home = () => {
-  const projects = [
-    {
-      title: 'Portfolio Tech Blog',
-      description: 'Blog moderne développé avec React, TailwindCSS et Framer Motion',
-      icon: <Code2 className="h-8 w-8 mb-4 text-blue-400" />,
-      tags: ['React', 'TailwindCSS', 'Framer Motion']
-    },
-    {
-      title: 'Projet 2',
-      description: 'Description de votre deuxième projet impressionnant',
-      icon: <Rocket className="h-8 w-8 mb-4 text-purple-400" />,
-      tags: ['Next.js', 'TypeScript', 'Node.js']
-    },
-    {
-      title: 'Projet 3',
-      description: 'Description de votre troisième projet innovant',
-      icon: <Brain className="h-8 w-8 mb-4 text-green-400" />,
-      tags: ['Python', 'FastAPI', 'Docker']
-    }
-  ];
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { language } = useLanguage();
+  const article = blogCreationArticle[language];
+  const [text, setText] = useState('');
+  const fullText = '> EXPLORING THE DIGITAL UNDERGROUND_';
+  
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      setText(fullText.slice(0, index));
+      index++;
+      if (index > fullText.length) index = 0;
+    }, 150);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white overflow-hidden">
-      {/* Hero Section */}
+    <div className="min-h-screen bg-white dark:bg-club-black">
       <div className="relative">
-        {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10" />
-        
-        <div className="container mx-auto px-4 pt-32 pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center relative z-10"
+            className="max-w-3xl"
           >
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 gradient-text animate-float">
-              Passionné par la Tech
+            <div className="font-mono text-sm text-club-smoke dark:text-club-text/60 mb-4">
+              {text}
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-display mb-4 text-club-black dark:text-club-text leading-none">
+              {t('home.title')} 
+              <span className="text-club-neon">{t('home.subtitle')}</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Développeur créatif explorant les dernières technologies web et partageant mes découvertes à travers des projets concrets.
+
+            <p className="text-lg text-club-smoke dark:text-club-text/70 max-w-2xl leading-relaxed font-light mb-6">
+              {t('home.description')}
+            </p>
+
+            <p className="text-sm font-mono text-club-smoke/60 dark:text-club-text/40 tracking-wider">
+              {t('home.tagline')}
             </p>
           </motion.div>
-        </div>
-      </div>
 
-      {/* Projects Section */}
-      <div className="container mx-auto px-4 py-20">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 * index }}
-              className="card-hover bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800"
-            >
-              {project.icon}
-              <h3 className="text-2xl font-semibold mb-4">{project.title}</h3>
-              <p className="text-gray-400 mb-6">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map(tag => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <motion.a
-                href="#"
-                className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
-                whileHover={{ x: 5 }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mt-24"
+          >
+            <div className="max-w-2xl mx-auto">
+              <motion.div
+                className="cursor-pointer"
+                onClick={() => navigate('/articles/blog-creation')}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
               >
-                Voir plus <ArrowRight className="ml-2 h-4 w-4" />
-              </motion.a>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="flex justify-center space-x-6 mt-16"
-        >
-          <motion.a
-            whileHover={{ scale: 1.1, y: -5 }}
-            href="https://github.com/votre-username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors"
-          >
-            <Github className="h-8 w-8" />
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.1, y: -5 }}
-            href="https://linkedin.com/in/votre-profil"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors"
-          >
-            <Linkedin className="h-8 w-8" />
-          </motion.a>
-        </motion.div>
+                <article className="border border-club-concrete dark:border-club-dark p-8 rounded-lg hover:border-club-neon transition-all duration-300">
+                  <div className="flex justify-between items-center mb-6">
+                    <span className="text-sm font-mono text-club-smoke dark:text-club-text/60">{article.date}</span>
+                    <span className="px-3 py-1 text-xs font-mono tracking-wider bg-club-dark text-club-text rounded-full">
+                      {article.tag}
+                    </span>
+                  </div>
+                  <h2 className="font-display text-2xl text-club-black dark:text-club-text mb-4 hover:text-club-neon transition-colors duration-300">
+                    {article.title}
+                  </h2>
+                  <p className="text-base text-club-smoke dark:text-club-text/70 font-light leading-relaxed">
+                    {article.content}
+                  </p>
+                  <div className="flex items-center text-club-smoke dark:text-club-text/60 hover:text-club-neon transition-colors duration-300 mt-6">
+                    <span className="text-xs font-mono mr-2">{t('home.readMore')}</span>
+                    <ArrowRight size={14} />
+                  </div>
+                </article>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

@@ -1,69 +1,38 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, Tag } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { blogCreationArticle } from '../content/articles/blog-creation';
+import { useLanguage } from '../context/LanguageContext';
 
 const Articles = () => {
-  const articles = [
-    {
-      title: "Mon Premier Projet Tech",
-      date: "8 Février 2025",
-      readTime: "5 min",
-      tags: ["React", "TailwindCSS"],
-      excerpt: "Description détaillée de mon approche et des défis rencontrés...",
-      slug: "premier-projet"
-    },
-    // Ajoutez d'autres articles ici
-  ];
+  const navigate = useNavigate();
+  const { language } = useLanguage();
+  const article = blogCreationArticle[language];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-16">
-      <div className="container mx-auto px-4">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
+    <div className="min-h-screen bg-white dark:bg-club-black pt-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl font-bold mb-12 text-center"
+          transition={{ duration: 0.5 }}
+          className="cursor-pointer"
+          onClick={() => navigate('/articles/blog-creation')}
         >
-          Articles & Projets
-        </motion.h1>
-
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article, index) => (
-            <motion.article
-              key={article.slug}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-xl transition-shadow"
-            >
-              <div className="p-6">
-                <h2 className="text-2xl font-semibold mb-4">{article.title}</h2>
-                <p className="text-gray-400 mb-4">{article.excerpt}</p>
-                
-                <div className="flex flex-wrap gap-4 text-sm text-gray-400">
-                  <div className="flex items-center">
-                    <Calendar className="h-4 w-4 mr-2" />
-                    {article.date}
-                  </div>
-                  <div className="flex items-center">
-                    <Clock className="h-4 w-4 mr-2" />
-                    {article.readTime}
-                  </div>
-                </div>
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {article.tags.map(tag => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-blue-500 text-sm rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.article>
-          ))}
-        </div>
+          <article className="border border-club-concrete dark:border-club-dark p-8 rounded-lg hover:border-club-neon transition-all duration-300 transform hover:-translate-y-1">
+            <div className="flex justify-between items-center mb-6">
+              <span className="text-sm font-mono text-club-smoke dark:text-club-text/60">{article.date}</span>
+              <span className="px-3 py-1 text-xs font-mono tracking-wider bg-club-dark text-club-text rounded-full">
+                {article.tag}
+              </span>
+            </div>
+            <h2 className="font-display text-2xl md:text-3xl text-club-black dark:text-club-text mb-4 hover:text-club-neon transition-colors duration-300">
+              {article.title}
+            </h2>
+            <p className="text-base text-club-smoke dark:text-club-text/70 font-light leading-relaxed">
+              {article.content}
+            </p>
+          </article>
+        </motion.div>
       </div>
     </div>
   );
